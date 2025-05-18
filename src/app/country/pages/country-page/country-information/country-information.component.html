@@ -1,7 +1,53 @@
 <section class="mx-10">
 
-  <h3 class="text-3xl">Nombre: {{country().name}}</h3>
-  <h2 class="text-xl font-thin">Población: {{country().population | number}}</h2>
+  <h3 class="text-3xl">País: {{country().name}}</h3>
+  <h3 class="text-2xl">Nombre Oficial: {{country().officialName}}</h3>
+
+</section>
+
+<section class="mt-10 ml-5">
+
+  <div class="stats shadow">
+  <div class="stat">
+    <div class="stat-figure text-secondary">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="currentColor" d="M12 12q-1.65 0-2.825-1.175T8 8t1.175-2.825T12 4t2.825 1.175T16 8t-1.175 2.825T12 12m-8 8v-2.8q0-.85.438-1.562T5.6 14.55q1.55-.775 3.15-1.162T12 13t3.25.388t3.15 1.162q.725.375 1.163 1.088T20 17.2V20z"/></svg>
+    </div>
+    <div class="stat-title">Población</div>
+    <div class="stat-value">{{country().population | number}}</div>
+    <div class="stat-desc">En {{currentYear()}}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-figure text-secondary">
+      <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24"><path fill="currentColor" d="M13.2 7.07L10.25 11l2.25 3c.33.44.24 1.07-.2 1.4a.994.994 0 0 1-1.4-.2c-1.05-1.4-2.31-3.07-3.1-4.14c-.4-.53-1.2-.53-1.6 0l-4 5.33c-.49.67-.02 1.61.8 1.61h18c.82 0 1.29-.94.8-1.6l-7-9.33a.993.993 0 0 0-1.6 0"/></svg>
+    </div>
+    <div class="stat-title">Superficie:</div>
+    <div class="stat-value">{{country().area | number}} km²</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-figure text-secondary">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="currentColor" d="M15.098 12.634L13 11.423V7a1 1 0 0 0-2 0v5a1 1 0 0 0 .5.866l2.598 1.5a1 1 0 1 0 1-1.732M12 2a10 10 0 1 0 10 10A10.01 10.01 0 0 0 12 2m0 18a8 8 0 1 1 8-8a8.01 8.01 0 0 1-8 8"/></svg>
+    </div>
+    <div class="stat-title">Usos Horarios:</div>
+    <div class="stat-value pl-5">{{country().timeZones}}</div>
+  </div>
+</div>
+</section>
+
+<section>
+
+<figure class="diff aspect-16/9" tabindex="0">
+  <div class="diff-item-1" role="img" tabindex="0">
+    <img  class="blur brightness-75" [alt]="country().flagDescr" [src]="country().flagSVG" />
+  </div>
+  <div class="diff-item-2" role="img">
+    <img
+      [alt]="country().flagDescr"
+      [src]="country().flagSVG" />
+  </div>
+  <div class="diff-resizer"></div>
+</figure>
 
 </section>
 
