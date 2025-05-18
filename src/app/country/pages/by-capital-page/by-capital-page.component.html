@@ -1,7 +1,8 @@
 
 <country-search-input
 placeholder="Buscar por capital de país"
-(searchResp)="query.set($event)"></country-search-input>
+(searchResp)="query.set($event)"
+[debounceTime]="300"></country-search-input>
 
 
 <country-list
