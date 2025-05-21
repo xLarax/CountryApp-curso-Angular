@@ -1,1 +1,19 @@
-<country-list [countries]="[]"></country-list>
+
+<section class="">
+
+  @for (region of regions; track $index) {
+
+    <button class="btn btn-outline mr-3 w-[100px]"
+    [class.btn-primary]="query() === region"
+    (click)="query.set(region)"
+    >{{region}}</button>
+  }
+
+</section>
+
+<country-list
+[countries]="countryResource.value() ?? []"
+[errorMessage]="countryResource.error()"
+[isEmpty]="countryResource.value()?.length === 0"
+[isLoading]="countryResource.isLoading()"
+></country-list>

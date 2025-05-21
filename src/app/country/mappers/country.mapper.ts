@@ -13,7 +13,7 @@ export class CountryMapper {
         flagDescr: item.flags.alt ?? 'No hay descripción disponible',
         name: item.translations['spa'].common ?? 'No Spanish name',
         officialName: item.translations['spa'].official ?? 'No Spanish name',
-        capital: item.capital.join(','),
+        capital: item.capital?.join(','),
         population: item.population,
         languages: item.languages,
         area: item.area,
